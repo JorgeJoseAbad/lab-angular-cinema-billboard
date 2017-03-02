@@ -1,0 +1,29 @@
+<div class="moviesList">
+   <h2>Movies List</h2>
+   <ul>
+     <li *ngFor="let movie of moviesList ;">
+       <div class="container">
+         <a href="/movie/{{movie.title }}"><h2 >{{movie.title }}</h2></a>
+         <p>{{movie.synopsis }}</p>
+         <h3>Genres:</h3>
+         <ul>
+           <li *ngFor="let genre of movie.genres ;">
+             <span>{{genre}}</span>
+           </li>
+         </ul>
+         <h4>Year {{movie.year }}</h4>
+         <h3>Director :{{movie.director }}</h3>
+         <h3>Principal Actors</h3>
+         <ul>
+           <li *ngFor="let actor of movie.actors ;">
+             <span>{{actor}}</span>
+           </li>
+         </ul>
+         <h4>Time: {{movie.hours }}</h4>
+         <h5>Movie Room :{{movie.room }}</h5>
+         <img src="{{movie.poster}}">
+         <br>
+       </div>
+     </li>
+   </ul>
+ </div>
