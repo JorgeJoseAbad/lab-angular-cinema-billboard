@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
- import { Cinema } from '../services/Cinema.service';
- import { ActivatedRoute } from '@angular/router';
+import { Cinema } from '../services/Cinema.service';
+import { ActivatedRoute } from '@angular/router';
 
  @Component({
    selector: 'app-movies-service',
    templateUrl: './movies-service.component.html',
-   styleUrls: ['./movies-service.component.css']
+   styleUrls: ['./movies-service.component.css'],
+   providers:[Cinema]
  })
  export class MyMovieComponentComponent implements OnInit {
    idMovie : Number;
    movieObject: Object;
-   constructor(public cinemaList: Cinema,private route: ActivatedRoute) { }
+   constructor(public cinemaList: Cinema, private route: ActivatedRoute) { }
 
    ngOnInit() {
      console.log(this.cinemaList.getMovie(this.idMovie));
