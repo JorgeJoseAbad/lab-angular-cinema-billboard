@@ -3,9 +3,9 @@ import { Cinema } from '../services/Cinema.service';
 import { ActivatedRoute } from '@angular/router';
 
  @Component({
-   selector: 'app-movies-service',
-   templateUrl: './movies-service.component.html',
-   styleUrls: ['./movies-service.component.css'],
+   selector: 'app-my-movie-component',
+   templateUrl: './my-movie-component.component.html',
+   styleUrls: ['./my-movie-component.component.css'],
    providers:[Cinema]
  })
  export class MyMovieComponentComponent implements OnInit {

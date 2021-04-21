@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
-import { MyMovieComponentComponent } from './movies-service/movies-service.component';
+import { MyMovieComponentComponent } from './my-movie-component/my-movie-component.component';
 import { MyHomeComponentComponent } from './my-home-component/my-home-component.component';
 
 const routes: Routes = [
