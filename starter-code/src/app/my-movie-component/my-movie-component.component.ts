@@ -9,16 +9,26 @@ import { ActivatedRoute } from '@angular/router';
    providers:[Cinema]
  })
  export class MyMovieComponentComponent implements OnInit {
-   idMovie : Number;
-   movieObject: Object;
+   private idMovie : Number;
+   private movieObject: Object;
+
    constructor(public cinemaList: Cinema, private route: ActivatedRoute) { }
 
    ngOnInit() {
-     console.log(this.cinemaList.getMovie(this.idMovie));
+     console.log(this.cinemaList.getMovie(this.idMovie)); //aqui no funciona porque
+                                             //aun no tenemos this.idMovie
      this.route.params
-       .subscribe((params) => this.idMovie = +params['id']);
-       this.movieObject = this.cinemaList.getMovie(this.idMovie);
+       .subscribe(
+         (params) => this.idMovie = +params['id'],
+         (err)=>console.log(err),
+         () => console.log("buscados params", this.idMovie) //esto debería funcionar ¿?
+       );
 
+     this.movieObject = this.cinemaList.getMovie(this.idMovie);
+
+     console.log(this.movieObject);
+     console.log(this.cinemaList.getMovie(this.idMovie)); //aqui si funciona porque
+                                        //hemos recuperado el idMovie de los parametros
    }
 
-   }
+}
